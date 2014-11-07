@@ -37,8 +37,8 @@ require(dplyr)
 
 
 ############# Load and transform data #################
-train = read.csv("C:/Users/Oreoluwa/Desktop/kaggle data/newtraining.csv")
-test = read.csv("C:/Users/Oreoluwa/Desktop/kaggle data/test.csv")
+train = read.csv("C:/Users/Oreoluwa/Desktop/kaggle data/newtraining.csv")  #change file path/directory
+test = read.csv("C:/Users/Oreoluwa/Desktop/kaggle data/test.csv")   #change file path/directory
 head(train)
 summary(train)
 #missing values of age! 
@@ -70,7 +70,7 @@ all = select(all
              
              ,  RefId , PurchDate , Auction , VehYear , VehicleAge , Make , Model , SubModel , Color , Transmission , WheelTypeID , WheelType , VehOdo , Nationality , Size , TopThreeAmericanName , MMRAcquisitionAuctionAveragePrice , MMRAcquisitionAuctionCleanPrice , MMRAcquisitionRetailAveragePrice , MMRAcquisitonRetailCleanPrice , MMRCurrentAuctionAveragePrice , MMRCurrentAuctionCleanPrice , MMRCurrentRetailAveragePrice , MMRCurrentRetailCleanPrice , PRIMEUNIT , AUCGUART , BYRNO , VNZIP1 , VNST , VehBCost , IsOnlineSale , WarrantyCost
              
-             ) 
+             ) #selecting all columns except isBadbuy
 #not many variables to choose from
 #perform variable selection later
 
@@ -230,7 +230,7 @@ head(isBadBuy, n = 20)
 
 #write the submission
 submission = data.frame(RefId = 1:nrow(test), isBadBuy = TestPredictions)
-write.csv(submission, file = "C:/Users/Oreoluwa/Desktop/kaggle data/gbm submission.csv", row.names = FALSE)
+write.csv(submission, file = "C:/Users/Oreoluwa/Desktop/kaggle data/gbm submission.csv", row.names = FALSE) #change file path/directory
 #####################################################
 
 
